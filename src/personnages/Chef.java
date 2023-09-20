@@ -1,34 +1,28 @@
 package personnages;
 
-public class Gaulois {
+public class Chef {
 	private String nom;
 	private int force;
-	private int effetPotion = 1;
+	private int effetPotion =1;
+	private Village village;
 	
-	public Gaulois(String nom, int force) {
+	public Chef(String nom, int force, int effetPotion, Village village) {
 		this.nom = nom;
 		this.force = force;
+		this.effetPotion = effetPotion;
+		this.village = village;
 	}
 	public String getNom() {
 		return nom;
-	}
-	@Override
-	public String toString() {
-		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
 	}
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "'"+ texte +"'");
 	}
 	private String prendreParole() {
-		return "Le gaulois " + nom + " : "; 
+		return "Le chef" + nom + "du village" + village.getNom() + " : "; 
 	}
 	public void frapper(Romain romain) {
 		System.out.println(nom + "envoie un coup a " + romain.getNom());
 		romain.recevoirCoup(force/3);
 	}
-	public static void main(String[] args) {
-		Gaulois asterix= new Gaulois("Astérix", 10);
-		System.out.println(asterix.prendreParole());
-	}
 }
-

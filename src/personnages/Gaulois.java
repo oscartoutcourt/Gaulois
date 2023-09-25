@@ -23,12 +23,19 @@ public class Gaulois {
 		return "Le gaulois " + nom + " : "; 
 	}
 	public void frapper(Romain romain) {
-		System.out.println(nom + "envoie un coup a " + romain.getNom());
-		romain.recevoirCoup(force/3);
+		System.out.println(nom + " envoie un coup a " + romain.getNom());
+		romain.recevoirCoup((force/3)*effetPotion);
 	}
+	
+	public void boirePotion(int forcePotion) {
+		effetPotion=forcePotion;
+		parler("Merci Druide, je sens que ma force est "+forcePotion +" fois décuplée");
+	}
+	
 	public static void main(String[] args) {
 		Gaulois asterix= new Gaulois("Astérix", 10);
-		System.out.println(asterix.prendreParole());
+		Romain cesar= new Romain("cesar", 10);
+		asterix.boirePotion(10);
 	}
 }
 

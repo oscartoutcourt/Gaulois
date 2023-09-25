@@ -25,4 +25,9 @@ public class Chef {
 		System.out.println(nom + "envoie un coup a " + romain.getNom());
 		romain.recevoirCoup(force/3);
 	}
+	public static void main(String[] args) {
+		Village v= new Village("vivi",20);
+		Chef chef=new Chef("abra",6,1,v);
+		System.out.println(chef.getNom());
+	}
 }

@@ -4,6 +4,7 @@ public class Romain {
 	private String nom;
 	private int force;
 	public Romain(String nom, int force) {
+		assert force>=0 : "Force pas positive";
 		this.nom = nom;
 		this.force = force;
 	}
@@ -17,16 +18,18 @@ public class Romain {
 		return "Le romain " + nom + " : "; 
 	}
 	public void recevoirCoup(int forceCoup) {
+		assert force>=0 : "Force pas positive";
+		int force_init=force;
 		force -= forceCoup;
 		if (force > 0) {
 			parler("Aïe");
 		} else {
 			parler("J'abandonne...");
 		}
+		assert force<force_init: "Force ne diminue pas après recevoirCoup";
 	}
 	public static void main(String[] args) {
-		Gaulois asterix= new Gaulois("Astérix", 10);
-		Romain cesar= new Romain("Cêsar", 1);
+		Romain cesar= new Romain("Cêsar", 6);
 		cesar.recevoirCoup(1);
 	}
 }

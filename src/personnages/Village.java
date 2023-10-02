@@ -50,7 +50,9 @@ public class Village {
 		village.ajouterHabitant(asterix);
 //		Gaulois gaulois = village.trouverHabitant(1);
 //		System.out.println(gaulois);
-//Il n'y a personne dans la case numero 1	
+//Il n'y a personne dans la case numero 1
+		Gaulois obelix= new Gaulois("Obélix",25);
+		village.ajouterHabitant(obelix);
 		village.afficherVillageois();
 	}
 }

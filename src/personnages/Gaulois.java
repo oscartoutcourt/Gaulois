@@ -39,11 +39,19 @@ public class Gaulois {
 			this.trophees[nbTrophees] = tropheesBataille[i];
 		}
 	}
-
-	
 	public void boirePotion(int forcePotion) {
 		effetPotion=forcePotion;
 		parler("Merci Druide, je sens que ma force est "+forcePotion +" fois décuplée");
+	}
+	public void faireUneDonnation(Musee musee) {
+		if(trophees.length != 0) {
+			parler("Je donne au musee tous mes trophees");
+			for(int i=0;i<trophees.length;i++) {
+				System.out.println(trophees[i]);
+				musee.donnerTrophees(, trophees[i]);
+			}
+			trophees = new Equipement[100];
+		}
 	}
 	
 	public static void main(String[] args) {

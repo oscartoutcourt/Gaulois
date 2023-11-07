@@ -4,7 +4,7 @@ import personnages.Druide;
 import personnages.Equipement;
 import personnages.Gaulois;
 import personnages.Romain;
-//import villagegaulois.Musee;
+import personnages.Musee;
 
 public class Scenario {
 
@@ -33,8 +33,9 @@ public class Scenario {
 		} while (milexcus.getForce() > 0 && !milexcus.isVainqueur());
 		
 		
-//		Musee musee = new Musee();
-//		asterix.faireUneDonnation(musee);
+		Musee musee = new Musee();
+		asterix.faireUneDonnation(musee);
+		//System.out.println(musee.extraireInstructionsOCaml());
 
 	}
 

@@ -20,7 +20,7 @@ public class Gaulois {
 		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
 	}
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "'"+ texte +"'");
+		System.out.println(prendreParole() + "\""+ texte +"\"");
 	}
 	private String prendreParole() {
 		return "Le gaulois " + nom + " : "; 
@@ -45,11 +45,14 @@ public class Gaulois {
 	}
 	public void faireUneDonnation(Musee musee) {
 		if(trophees.length != 0) {
-			parler("Je donne au musee tous mes trophees");
-			for(int i=0;i<trophees.length;i++) {
-				System.out.println(trophees[i]);
-				musee.donnerTrophees(, trophees[i]);
+			int i=0;
+			StringBuilder bld = new StringBuilder();
+			while(trophees[i]!=null) {
+				bld.append("- "+trophees[i]+"\n");
+				musee.donnerTrophees(this, trophees[i]);
+				i++;
 			}
+			parler("Je donne au musee tous mes trophees:\n"+bld.toString());
 			trophees = new Equipement[100];
 		}
 	}

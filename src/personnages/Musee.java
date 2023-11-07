@@ -10,8 +10,8 @@ public class Musee {
 	}
 	public String extraireInstructionsOCaml() {
 		StringBuilder bld = new StringBuilder();
-		for(int i=0;i<trophees.length;i++) {
-			bld.append("\""+ trophees[i].getGaulois()+"\", \""+trophees[i].getEquipement()+"\";\n");
+		for(int i=0;i<nbTrophees;i++) {
+			bld.append("	\""+ trophees[i].getGaulois().getNom()+"\", \""+trophees[i].getEquipement()+"\";\n");
 		}
 		return "let musee = [\n"+bld.toString()+ "]";
 	}
